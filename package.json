@@ -1,0 +1,25 @@
+{
+  "name": "futurebox",
+  "version": "1.0.0",
+  "description": "designer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kicy-blue/futureBox.git"
+  },
+  "keywords": [
+    "designer"
+  ],
+  "author": "kicy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kicy-blue/futureBox/issues"
+  },
+  "homepage": "https://github.com/kicy-blue/futureBox#readme",
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
