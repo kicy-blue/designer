@@ -1,0 +1,20 @@
+{
+ // 开启
+ "eslint.enable": true,
+ // 保存
+ "eslint.autoFixOnSave": true,
+ "eslint.run": "onType",
+ "eslint.options": {
+     "extensions": [".js",".vue"]
+ },
+ "eslint.validate": [
+     // 此处保存时，自动修复
+     { "language": "vue", "autoFix": true },
+     "javascript",
+     "html",
+     "vue-html"
+],
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true
+}
+}
