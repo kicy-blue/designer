@@ -1,20 +1,102 @@
 {
- // 开启
- "eslint.enable": true,
- // 保存
- "eslint.autoFixOnSave": true,
- "eslint.run": "onType",
- "eslint.options": {
-     "extensions": [".js",".vue"]
- },
- "eslint.validate": [
-     // 此处保存时，自动修复
-     { "language": "vue", "autoFix": true },
-     "javascript",
-     "html",
-     "vue-html"
-],
-"editor.codeActionsOnSave": {
-  "source.fixAll.eslint": true
-}
+  "editor.tabSize": 2, // 一个制表符等于的空格数。在 #editor.detectIndentation# 启用时，根据文件内容，该设置可能会被覆盖。
+  "files.associations": {
+    //配置语言的文件关联 (如: "*.extension": "html")。这些关联的优先级高于已安装语言的默认关联。
+    "*.vue": "vue"
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  //保存时自动格式化
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // 是否开启eslint检测
+  "eslint.enable": true,
+  //文件保存是否根据eslint进行格式化
+  "eslint.autoFixOnSave": true,
+  "eslint.run": "onType",
+  //eslint配置文件
+  "eslint.options": {
+    "extensions": [".js", ".vue"],
+    "configFile": ["./.eslintrc.js"],
+    "plugins": ["html"]
+  },
+  "eslint.packageManager": "yarn",
+  "eslint.validate": [
+    "javascript", //  用eslint的规则检测js文件
+    {
+      "language": "vue", // 检测vue文件
+      "autoFix": true //  为vue文件开启保存自动修复的功能
+    },
+    {
+      "language": "html",
+      "autoFix": true
+    },
+    "vue-html",
+    "javascriptreact"
+  ],
+  "vetur.format.options.tabSize": 4,
+  "vetur.format.options.useTabs": true,
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.format.defaultFormatterOptions": {
+    "prettier": {
+      "semi": false, //设置分号
+      "singleQuote": true //用单引号
+    },
+    "js-beautify-html": {
+      "wrap_line_length": 300, //多少字符换行
+      "wrap_attributes": "auto",
+      "end_with_newline": false
+    }
+  },
+
+  //配置在搜索中排除的文件和文件夹的 glob 模式。已经继承 #files.exclude# 设置的所有 glob 模式。可在此处阅读有关 glob 模式的详细信息。
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/dist": true
+  },
+  //为指定的语法定义配置文件或使用带有特定规则的配置文件。
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx",
+    "vue": "html",
+    "vue-html": "html"
+  },
+  "git.confirmSync": false, // 同步 Git 存储库前请先进行确认
+  "window.zoomLevel": 0, //调整窗口的缩放级别。原始大小是 0，每次递增(例如 1)或递减(例如 -1)表示放大或缩小 20%。也可以输入小数以便以更精细的粒度调整缩放级别。
+  "editor.renderWhitespace": "boundary", // 控制编辑器在空白字符上显示符号的方式。boundary: 除了单个空格，在空白字符上显示符号
+  "editor.cursorBlinking": "smooth", //控制光标的动画样式。
+  "editor.minimap.enabled": true, //控制是否显示缩略图。
+  "editor.minimap.renderCharacters": false, //渲染每行的实际字符，而不是色块。
+  //  "editor.fontFamily": "'Droid Sans Mono', 'Courier New', monospace, 'Droid Sans Fallback'", //控制字体系列
+  "window.title": "${dirty}${activeEditorMedium}${separator}${rootName}",
+  "editor.codeLens": true, //控制是否在编辑器中显示 CodeLens。
+  "editor.snippetSuggestions": "top", //控制代码片段是否与其他建议一起显示及其排列的位置。top: 在其他建议上方显示代码片段建议。
+  "search.followSymlinks": false, //控制是否在搜索中跟踪符号链接。
+  //  "workbench.colorTheme": "Visual Studio Light", //指定用在工作台中的颜色主题。
+  "workbench.startupEditor": "newUntitledFile", //在没有从上一会话中恢复出信息的情况下，控制启动时显示的编辑器。   newUntitledFile: 打开新的无标题文件 (仅在打开空工作区时适用)。
+  //终端在 Windows 上使用的 Shell 的路径。
+  "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
+  //针对某种语言，配置替代编辑器设置。
+  "[html]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "octref.vetur"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+
+  // "prettier.requireConfig": true,
+
+  //prettier格式化时开启eslint支持
+  "prettier.eslintIntegration": true,
+  "prettier.semi": false, //设置分号
+  "prettier.singleQuote": true, //用单引号
+  "javascript.format.semicolons": "remove",
+  "typescript.format.semicolons": "remove"
 }
