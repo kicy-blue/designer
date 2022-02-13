@@ -1,30 +1,77 @@
 {
-  "name": "designer",
-  "version": "1.0.0",
-  "description": "设计器",
-  "keywords": [
-    "designer",
-    "drag"
-  ],
-  "author": "kicy-blue <18802683293@126.com>",
-  "homepage": "https://github.com/kicy-blue/futureBox/tree/main/packages/designer#readme",
-  "license": "ISC",
-  "main": "lib/designer.js",
-  "directories": {
-    "lib": "lib",
-    "test": "__tests__"
-  },
-  "files": [
-    "lib"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kicy-blue/futureBox.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
-  },
-  "bugs": {
-    "url": "https://github.com/kicy-blue/futureBox/issues"
-  }
+    "name": "designer",
+    "version": "1.0.0",
+    "description": "设计器",
+    "keywords": [
+        "designer",
+        "drag"
+    ],
+    "author": "kicy-blue <18802683293@126.com>",
+    "homepage": "https://github.com/kicy-blue/futureBox/tree/main/packages/designer#readme",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kicy-blue/futureBox.git"
+    },
+    "private": true,
+    "scripts": {
+        "dev": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint"
+    },
+    "dependencies": {
+        "ant-design-vue": "^1.7.8",
+        "axios": "^0.25.0",
+        "core-js": "^3.6.5",
+        "eslint-plugin-import": "^2.25.4",
+        "eslint-plugin-typescript": "^0.14.0",
+        "lodash": "^4.17.21",
+        "vue": "^2.6.11",
+        "vue-class": "^2.0.1",
+        "vue-class-component": "^7.2.3",
+        "vue-property-decorator": "^9.1.2",
+        "vue-router": "^3.2.0",
+        "vuex": "^3.4.0",
+        "webpack-bundle-analyzer": "^4.5.0",
+        "monco-editor-webpack-plugin": "2.0.0",
+        "monaco-editor": "0.21.2"
+    },
+    "devDependencies": {
+        "@types/node": "^17.0.17",
+        "@types/webpack-env": "^1.16.3",
+        "@typescript-eslint/eslint-plugin": "^4.18.0",
+        "@typescript-eslint/parser": "^4.33.0",
+        "@vue/cli-plugin-babel": "~4.5.0",
+        "@vue/cli-plugin-eslint": "~4.5.0",
+        "@vue/cli-plugin-router": "~4.5.0",
+        "@vue/cli-plugin-typescript": "~4.5.0",
+        "@vue/eslint-config-standard": "^5.1.2",
+        "@vue/cli-plugin-vuex": "~4.5.0",
+        "@vue/cli-service": "~4.5.0",
+        "@vue/eslint-config-typescript": "^7.0.0",
+        "eslint": "^6.7.2",
+        "eslint-plugin-vue": "^6.2.2",
+        "babel-eslint": "^10.0.1",
+        "babel-plugin-import": "^1.12.0",
+        "commander": "^2.20.0",
+        "compression-webpack-plugin": "6.1.1",
+        "copy-webpack-plugin": "^0.13.1",
+        "json-server": "^0.14.2",
+        "less": "^3.0.4",
+        "less-loader": "^5.0.0",
+        "nodemon": "^2.0.9",
+        "postcss-pxtorem": "^4.0.1",
+        "ts-import-plugin": "^1.5.5",
+        "typescript": "~4.1.5",
+        "uglifyjs-webpack-plugin": "^1.3.0",
+        "vue-pdf": "^4.3.0",
+        "vue-template-compiler": "^2.6.11",
+        "webpack-merge": "^5.7.3",
+        "worker-loader": "^3.0.8",
+        "antd-theme-webpack-plugin": "^1.3.0",
+        "hard-source-webpack-plugin": "^0.13.1"
+    },
+    "bugs": {
+        "url": "https://github.com/kicy-blue/futureBox/issues"
+    }
 }

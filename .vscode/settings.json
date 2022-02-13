@@ -1,8 +1,10 @@
 {
   "editor.tabSize": 2, // 一个制表符等于的空格数。在 #editor.detectIndentation# 启用时，根据文件内容，该设置可能会被覆盖。
+  "editor.fontWeight": "400",
   "files.associations": {
-    //配置语言的文件关联 (如: "*.extension": "html")。这些关联的优先级高于已安装语言的默认关联。
-    "*.vue": "vue"
+    //配置语言的文件关联 (如: "*.extension": "html")。这些关联的优先级高于已安装语言的默认关联。(配置文件，以便使用对应的提示)
+    "*.vue": "vue",
+    "*.wxss": "css",
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   //保存时自动格式化
@@ -17,9 +19,16 @@
   "eslint.run": "onType",
   //eslint配置文件
   "eslint.options": {
-    "extensions": [".js", ".vue"],
-    "configFile": ["./.eslintrc.js"],
-    "plugins": ["html"]
+    "extensions": [
+      ".js",
+      ".vue"
+    ],
+    "configFile": [
+      "./.eslintrc.js"
+    ],
+    "plugins": [
+      "html"
+    ]
   },
   "eslint.packageManager": "yarn",
   "eslint.validate": [
@@ -49,7 +58,6 @@
       "end_with_newline": false
     }
   },
-
   //配置在搜索中排除的文件和文件夹的 glob 模式。已经继承 #files.exclude# 设置的所有 glob 模式。可在此处阅读有关 glob 模式的详细信息。
   "search.exclude": {
     "**/node_modules": true,
@@ -90,9 +98,7 @@
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-
   // "prettier.requireConfig": true,
-
   //prettier格式化时开启eslint支持
   "prettier.eslintIntegration": true,
   "prettier.semi": false, //设置分号

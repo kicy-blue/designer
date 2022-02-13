@@ -1,16 +1,22 @@
 module.exports = {
   root: true,
   parserOptions: {
-    parser: 'babel-eslint',
-    sourceType: 'module',
+    parser: '@typescript-eslint/parser',
   },
   env: {
     browser: true,
-    node: true,
+    commonjs: true,
     es6: true,
+    jquery: true,
+    node: true,
   },
-  extends: ['plugin:vue/recommended', 'eslint:recommended'],
-
+  extends: ['plugin:vue/recommended', 'eslint:recommended', '@vue/standard', '@vue/typescritpt'],
+  settings: {
+    "import/extensions": [".js", ".ts", ".vue"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".vue"]
+    }
+  },
   // add your custom rules here
   // it is base on https://github.com/vuejs/eslint-config-vue
   rules: {
@@ -60,6 +66,51 @@ module.exports = {
       },
     ],
     'vue/no-side-effects-in-computed-properties': 0,
+
+    'vue/html-indent': [
+      2,
+      2,
+      {
+        attribute: 1,
+        closeBracket: 0,
+        alignAttributesVertically: true
+      }
+    ],
+    'vue/html-end-tags': 2,
+    'vue/mustache-interpolation-spacing': 2,
+    'vue/no-molti-spaces': 2,//禁止重复空格
+    'vue-v-bind-style': 1,
+    'vue/v-on-style': 1,
+    //html属性必须用双引号括起来
+    'vue/attribute-hyphenation': [
+      0,
+      'never',
+      {
+        ignore: [
+          'data-', 'aria-', 'slot-scope'
+        ]
+      }
+    ],
+    //计算属性中禁止包含异步方法
+    'vue/no-async-in-computes-properties': 2,
+    //禁止对象字面量出现重复的键
+    'vue/no-dupe-keys': 2,
+    //禁止出现语法错误
+    'vue/no-parsing-error': [
+      2, {
+        'x-invalid-end-tag': false
+      }
+    ],
+    //禁止覆盖保留字
+    'vue/no-reserved-keys': 2,
+    //禁止textarea出现{{value}}
+    'vue/no-textarea-mustache': 2,
+    //禁止定义无用参数：过于严格，可以不用
+    'vue/no-unuesd-vars': 2,
+    //<component>组件必须绑定is传参
+    'vue/require-component-is': 2,
+    //render函数必须有返回值
+    'vue/require-render-return': 2,
     'accessor-pairs': 2, //在对象中使用getter/setter
     'arrow-spacing': [
       2,
@@ -252,7 +303,8 @@ module.exports = {
         allowTemplateLiterals: true,
       },
     ], //引号类型 `` "" ''
-    semi: [2, 'never'], //语句强制分号结尾
+    // semi: [2, 'never'], //语句强制分号结尾
+    'semi': 0,
     'semi-spacing': [
       2,
       {

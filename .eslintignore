@@ -1,0 +1,9 @@
+dist/*
+node_modules/*
+stc/common/icons/*
+src/common/font/*
+
+packages/configure/node_modules
+packages/designer/node_modules
+packages/mockserver/node_modules
+packages/p-ts/node_modules
