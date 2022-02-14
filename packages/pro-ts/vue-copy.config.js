@@ -1,5 +1,4 @@
 const path = require('path')
-const fs = require('fs')
 const webpack = require('webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const tsImportPluginFactory = require('ts-import-plugin')
@@ -24,9 +23,9 @@ const antdOptions = {
 const env = require('./env')
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === "production" ? "/pro" : "/",
+  publicPath: process.env.NODE_ENV === "production" ? "./" : "/",
   pages: {
-    index: {
+    proIndex: {
       // page 的入口
       entry: "src/main.ts",
       publicPath: "./dist",
@@ -39,14 +38,14 @@ module.exports = {
       title: "神奇魔盒",
       // 在这个页面中包含的块，默认情况下会包含
       // 提取出来的通用 chunk 和 vendor chunk。
-      chunks: ["chunk-vendors", "chunk-common", "index"],
+      chunks: ["chunk-vendors", "chunk-common", "proIndex"],
     }
   },
   css: {
     loaderOptions: {
       less: {
         modifyVars: {
-          'primary-color': '#89ac12'//全局主题色
+          // 'primary-color': '#89ac12'//全局主题色
         },
         javascriptEnabled: true
       }
@@ -78,9 +77,9 @@ module.exports = {
           test: new RegExp(
             '\\.(' + productionGzipExtensions.join('|') + ')$'
           ),
-          threshold: 10240,
-          minRatio: 0.8,
-          deleteOriginaAssets: false
+          threshold: 10240,//只有大于该值的资源会被处理
+          minRatio: 0.8,//只有压缩率小于这个值的资源才会被处理
+          deleteOriginaAssets: false//删除原文件
         })
       )
     }

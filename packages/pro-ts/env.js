@@ -1,6 +1,6 @@
 
 module.exports = {
-  'port': 8010,
+  'port': 8020,
   'proxy': {
     'futurebox': {
       'target': 'http://192.168.12.11:8001',

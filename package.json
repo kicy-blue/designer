@@ -4,9 +4,10 @@
     "version": "1.0.0",
     "description": "designer",
     "scripts": {
-        "init": "npm run clean && npm ci && npm run bootstrap",
-        "bootstrap": "npx lerna bootstrap --hoist --nohoist=@types/node",
         "clean": "npx lerna clean -y",
+        "bootstrap": "npx lerna bootstrap --hoist --nohoist=@types/node",
+        "init": "npm run clean && npm ci && npm run bootstrap",
+        "init:win": "npm run clean && npm ci && npm run bootstrap",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
